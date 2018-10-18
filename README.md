@@ -13,5 +13,7 @@
     > htmlWebView.loadDataWithHtml(htmlText);
 
 * 获取当前html页面的所有图片地址 (可选)
-    > htmlWebView.getImageUrls();
+    > htmlWebView.getImageUrls(); 此方法需要在loadDataWithHtml调用之后才能获取到图片地址
+
+    > htmlWebView.getImageUrls(htmlText);
 
