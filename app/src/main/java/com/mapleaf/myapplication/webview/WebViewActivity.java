@@ -24,17 +24,16 @@ public class WebViewActivity extends AppCompatActivity {
         htmlWebView.setOnHtmlWebViewListener(new HtmlWebView.OnHtmlWebViewListener() {
             @Override
             public void onPageStarted() {
-                Log.v("==yufei==", "onPageStarted");
+
             }
 
             @Override
             public void onPageFinished() {
-                Log.v("==yufei==", "onPageFinished");
+
             }
 
             @Override
             public void onClickImage(String imageUrl, int position) {
-                Log.v("==yufei==", "imageUrl = " + imageUrl+"   pos = "+position);
                 Intent intent = new Intent(WebViewActivity.this,PhotoActivity.class);
                 intent.putExtra("curImageUrl",imageUrl);
                 startActivity(intent);
