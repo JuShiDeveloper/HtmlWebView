@@ -10,5 +10,8 @@
 * 设置Listener
     > htmlWebView.setOnHtmlWebViewListener(new HtmlWebView.OnHtmlWebViewListener())
 * 设置加载html字符串
-    > htmlWebView.loadDataWithHtml(htmlText);    
+    > htmlWebView.loadDataWithHtml(htmlText);
+
+* 获取当前html页面的所有图片地址
+    > htmlWebView.getImageUrls();
 
