@@ -12,6 +12,6 @@
 * 设置加载html字符串
     > htmlWebView.loadDataWithHtml(htmlText);
 
-* 获取当前html页面的所有图片地址
+* 获取当前html页面的所有图片地址 (可选)
     > htmlWebView.getImageUrls();
 
