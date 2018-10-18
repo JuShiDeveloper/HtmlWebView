@@ -17,3 +17,9 @@
 
     > htmlWebView.getImageUrls(htmlText);
 
+### gradle依赖
+
+~~~
+implementation 'com.jushi:htmlwebview:1.0.0'
+implementation 'org.jsoup:jsoup:1.10.3'
+~~~
