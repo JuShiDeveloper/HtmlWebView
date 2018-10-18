@@ -17,11 +17,4 @@
 
     > htmlWebView.getImageUrls(htmlText);
 
-### gradle依赖
 
-~~~
-maven { url "https://raw.githubusercontent.com/JuShiDeveloper/HtmlWebView/master" }
-
-implementation 'com.jushi:htmlwebview:1.0.0'
-implementation 'org.jsoup:jsoup:1.10.3'
-~~~
