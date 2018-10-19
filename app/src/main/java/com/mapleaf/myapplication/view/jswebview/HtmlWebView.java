@@ -26,7 +26,6 @@ import java.util.regex.Pattern;
  * 可设置占位图并且实现图片点击的加载html字符串的WebView
  */
 public class HtmlWebView extends WebView {
-    private Context context;
     private final String UTF_8 = "UTF-8";
     private String imageListener = "imageListener";
     private String baseUrl = "file:///android_asset/";
@@ -36,19 +35,16 @@ public class HtmlWebView extends WebView {
 
     public HtmlWebView(Context context) {
         super(context);
-        this.context = context;
         initWebViewSet();
     }
 
     public HtmlWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
         initWebViewSet();
     }
 
     public HtmlWebView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        this.context = context;
         initWebViewSet();
     }
 
@@ -206,7 +202,7 @@ public class HtmlWebView extends WebView {
                     if (listener != null && imageUrl.contains("http")) {
                         listener.onClickImage(imageUrl, i);
                     } else {
-                        listener.onClickImage("image load filed", i);
+                        listener.onClickImage("image load failed", i);
                     }
                 }
             }
@@ -271,7 +267,7 @@ public class HtmlWebView extends WebView {
          * @return 替换了图片地址的html字符串（图片显示为占位图）
          */
         public static String getNewContent(String htmltext, String placeholderImage) {
-            //jsoup解析body数据
+            //jsoup解析html数据
             Document doc = Jsoup.parse(htmltext);
             Elements elements = doc.getElementsByTag("img");
             for (Element element : elements) {
@@ -281,7 +277,7 @@ public class HtmlWebView extends WebView {
                 //但是注意不能放到自定义的如_src中，会导致js代码中this._src取到undefine
                 //我不懂js，所以只能放在原有的属性中
                 element.attr("alt", element.attr("src"));
-                //将src的值替换为assets文件夹下loading_image_default.png
+                //将src的值替换为assets文件夹下loading_default_image.png
                 element.attr("src", placeholderImage);
             }
             return doc.toString();
